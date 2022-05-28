@@ -1,0 +1,4 @@
+2022-05-28 10:04:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "create table [*]user (telefono integer not null, contraseña varchar(255), nombre varchar(255), visto boolean, primary key (telefono))"; se esperaba "identifier"
+Syntax error in SQL statement "create table [*]user (telefono integer not null, contraseña varchar(255), nombre varchar(255), visto boolean, primary key (telefono))"; expected "identifier"; SQL statement:
+create table user (telefono integer not null, contraseña varchar(255), nombre varchar(255), visto boolean, primary key (telefono)) [42001-212]
