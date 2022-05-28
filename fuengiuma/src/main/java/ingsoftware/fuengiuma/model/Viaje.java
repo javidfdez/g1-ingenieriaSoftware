@@ -36,6 +36,23 @@ public class Viaje {
 	@ManyToMany (mappedBy="viajesDestino")
 	private List<Lugares> destino;
 	
+	
+	
+	
+	public Viaje(int código, Lugares lugarOrigen, Lugares lugarDestino, Lugares puntosRecogida, Date horaSalida,
+			Date horaLlegada, double precio, User conductor, String coche, short plazas, boolean visibilidad) {
+		Código = código;
+		LugarOrigen = lugarOrigen;
+		LugarDestino = lugarDestino;
+		PuntosRecogida = puntosRecogida;
+		HoraSalida = horaSalida;
+		HoraLlegada = horaLlegada;
+		Precio = precio;
+		Conductor = conductor;
+		Coche = coche;
+		Plazas = plazas;
+		Visibilidad = visibilidad;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
