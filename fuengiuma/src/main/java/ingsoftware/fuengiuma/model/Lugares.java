@@ -25,7 +25,17 @@ public class Lugares {
 
     @ManyToMany(mappedBy = "destino")
     private List<Viaje> viajesDestino;
+<<<<<<< HEAD
 */
+=======
+
+    public Lugares(short latitud, short longitud, String nombre) {
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.nombre = nombre;
+    }
+
+>>>>>>> refs/remotes/origin/main
     public short getLatitud() {
         return latitud;
     }
