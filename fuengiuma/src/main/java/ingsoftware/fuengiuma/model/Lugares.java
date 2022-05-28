@@ -25,7 +25,7 @@ public class Lugares {
 
     @ManyToMany(mappedBy = "destino")
     private List<Viaje> viajesDestino;
-<<<<<<< HEAD
+<<<<<<< HEADz
 */
 =======
 

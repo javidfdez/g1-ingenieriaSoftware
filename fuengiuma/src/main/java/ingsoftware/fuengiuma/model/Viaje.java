@@ -10,7 +10,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-
+/*
+ * 
+ * Hecho por:
+ * 
+ * 
+ * Iván Lago
+ * Carlos Ríos
+ * Javier Díaz
+ * Jose Ismael Marinca 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 @Entity
 public class Viaje {
 
