@@ -9,55 +9,65 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Viaje {
 
 	@Id
 	@GeneratedValue
-	private int Código;
+	private int código;
 	
-	private Lugares LugarOrigen;
-	private Lugares LugarDestino;
-	private Lugares PuntosRecogida;
+	private Lugares lugarOrigen;
+	private Lugares lugarDestino;
+	private Lugares puntosRecogida;
 	
-    @DateTimeFormat(iso = ISO.DATE)
-	private Date HoraSalida;
-	private Date HoraLlegada;   
-	private double Precio;  
-	private User Conductor;   
-	private String Coche;    
-	private short Plazas; 
-	private boolean Visibilidad;
+    //@DateTimeFormat(iso = ISO.DATE)
+	//private Date HoraSalida;
+//	private Date HoraLlegada;   
+	private double precio;  
+	private User conductor;   
+	private String coche;    
+	private short plazas; 
+	private boolean visibilidad;
 	
-	@ManyToMany (mappedBy="viajesOrigen")
+	/*@ManyToMany (mappedBy="viajesOrigen")
 	private List<Lugares> origen;
 	
 	@ManyToMany (mappedBy="viajesDestino")
 	private List<Lugares> destino;
 	
+	@ManyToMany (mappedBy= "viajePasajero")
+	private List<User> pasajeros;
+	
+	@ManyToOne 
+	private User conductor;
+	*/
 	
 	
 	
-	public Viaje(int código, Lugares lugarOrigen, Lugares lugarDestino, Lugares puntosRecogida, Date horaSalida,
-			Date horaLlegada, double precio, User conductor, String coche, short plazas, boolean visibilidad) {
-		Código = código;
-		LugarOrigen = lugarOrigen;
-		LugarDestino = lugarDestino;
-		PuntosRecogida = puntosRecogida;
-		HoraSalida = horaSalida;
-		HoraLlegada = horaLlegada;
-		Precio = precio;
-		Conductor = conductor;
-		Coche = coche;
-		Plazas = plazas;
-		Visibilidad = visibilidad;
+	public Viaje(int código, Lugares lugarOrigen, Lugares lugarDestino, Lugares puntosRecogida, double precio,
+			User conductor, String coche, short plazas, boolean visibilidad) {
+		super();
+		this.código = código;
+		this.lugarOrigen = lugarOrigen;
+		this.lugarDestino = lugarDestino;
+		this.puntosRecogida = puntosRecogida;
+		this.precio = precio;
+		this.conductor = conductor;
+		this.coche = coche;
+		this.plazas = plazas;
+		this.visibilidad = visibilidad;
+	}
+	@Override
+	public String toString() {
+		return "Viaje [código=" + código + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Código;
+		result = prime * result + código;
 		return result;
 	}
 	@Override
@@ -69,75 +79,63 @@ public class Viaje {
 		if (getClass() != obj.getClass())
 			return false;
 		Viaje other = (Viaje) obj;
-		if (Código != other.Código)
+		if (código != other.código)
 			return false;
 		return true;
 	}
 	public int getCódigo() {
-		return Código;
+		return código;
 	}
 	public void setCódigo(int código) {
-		Código = código;
+		this.código = código;
 	}
 	public Lugares getLugarOrigen() {
-		return LugarOrigen;
+		return lugarOrigen;
 	}
 	public void setLugarOrigen(Lugares lugarOrigen) {
-		LugarOrigen = lugarOrigen;
+		this.lugarOrigen = lugarOrigen;
 	}
 	public Lugares getLugarDestino() {
-		return LugarDestino;
+		return lugarDestino;
 	}
 	public void setLugarDestino(Lugares lugarDestino) {
-		LugarDestino = lugarDestino;
+		this.lugarDestino = lugarDestino;
 	}
 	public Lugares getPuntosRecogida() {
-		return PuntosRecogida;
+		return puntosRecogida;
 	}
 	public void setPuntosRecogida(Lugares puntosRecogida) {
-		PuntosRecogida = puntosRecogida;
-	}
-	public Date getHoraSalida() {
-		return HoraSalida;
-	}
-	public void setHoraSalida(Date horaSalida) {
-		HoraSalida = horaSalida;
-	}
-	public Date getHoraLlegada() {
-		return HoraLlegada;
-	}
-	public void setHoraLlegada(Date horaLlegada) {
-		HoraLlegada = horaLlegada;
+		this.puntosRecogida = puntosRecogida;
 	}
 	public double getPrecio() {
-		return Precio;
+		return precio;
 	}
 	public void setPrecio(double precio) {
-		Precio = precio;
+		this.precio = precio;
 	}
 	public User getConductor() {
-		return Conductor;
+		return conductor;
 	}
 	public void setConductor(User conductor) {
-		Conductor = conductor;
+		this.conductor = conductor;
 	}
 	public String getCoche() {
-		return Coche;
+		return coche;
 	}
 	public void setCoche(String coche) {
-		Coche = coche;
+		this.coche = coche;
 	}
 	public short getPlazas() {
-		return Plazas;
+		return plazas;
 	}
 	public void setPlazas(short plazas) {
-		Plazas = plazas;
+		this.plazas = plazas;
 	}
 	public boolean isVisibilidad() {
-		return Visibilidad;
+		return visibilidad;
 	}
 	public void setVisibilidad(boolean visibilidad) {
-		Visibilidad = visibilidad;
+		this.visibilidad = visibilidad;
 	}
 	
 	

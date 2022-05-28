@@ -2,6 +2,11 @@ package ingsoftware.fuengiuma.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +18,13 @@ public class User {
     private Integer telefono;
     private String contraseña;
     private Boolean visto;
+    
+	//@ManyToMany (mappedBy= "pasajeros")
+	//private List<Viaje> viajesPasajeros;
+	
+//	@OneToMany (mappedBy= "conductor") 
+	//private List<Viaje> viajesConductor;
+	
 
     public User(String nombre, Integer telefono, String contraseña) {
         this.nombre = nombre;
@@ -21,6 +33,7 @@ public class User {
         this.visto = true;
     }
 
+    
     public String getNombre() {
         return nombre;
     }

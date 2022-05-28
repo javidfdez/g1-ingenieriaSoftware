@@ -1,5 +1,7 @@
 package ingsoftware.fuengiuma.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -9,16 +11,21 @@ public class Lugares {
 
     @Id
     private short latitud;
-    @Id
+    //@Id
     private short longitud;
-    private String nombre;
+    @Override
+	public String toString() {
+		return "Lugares [latitud=" + latitud + ", longitud=" + longitud + "]";
+	}
 
-    @ManyToMany(mappedBy = "origen")
+	private String nombre;
+
+   /* @ManyToMany(mappedBy = "origen")
     private List<Viaje> viajesOrigen;
 
     @ManyToMany(mappedBy = "destino")
     private List<Viaje> viajesDestino;
-
+*/
     public short getLatitud() {
         return latitud;
     }
