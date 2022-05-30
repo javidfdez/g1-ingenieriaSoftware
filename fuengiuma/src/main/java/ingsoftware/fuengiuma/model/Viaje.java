@@ -30,38 +30,56 @@ public class Viaje {
 
 	@Id
 	@GeneratedValue
-	private int código;
+	private int id;
+
 	
-	private Lugares lugarOrigen;
-	private Lugares lugarDestino;
-	private Lugares puntosRecogida;
-	
-    //@DateTimeFormat(iso = ISO.DATE)
-	//private Date HoraSalida;
-//	private Date HoraLlegada;   
-	private double precio;  
-	private User conductor;   
+    @DateTimeFormat(iso = ISO.DATE)
+	private Date HoraSalida;
+	@DateTimeFormat(iso = ISO.DATE)
+	private Date HoraLlegada;
+	private double precio;
 	private String coche;    
 	private short plazas; 
 	private boolean visibilidad;
 	
-	/*@ManyToMany (mappedBy="viajesOrigen")
-	private List<Lugares> origen;
+	@ManyToMany (mappedBy="viajesOrigen")
+	private List<Lugares> puntosRecogida;
 	
 	@ManyToMany (mappedBy="viajesDestino")
 	private List<Lugares> destino;
 	
-	@ManyToMany (mappedBy= "viajePasajero")
+	@ManyToMany
 	private List<User> pasajeros;
 	
 	@ManyToOne 
 	private User conductor;
-	*/
-	
-	
-	
+
+	public List<Lugares> getOrigen() {
+		return origen;
+	}
+
+	public void setOrigen(List<Lugares> origen) {
+		this.origen = origen;
+	}
+
+	public List<Lugares> getDestino() {
+		return destino;
+	}
+
+	public void setDestino(List<Lugares> destino) {
+		this.destino = destino;
+	}
+
+	public List<User> getPasajeros() {
+		return pasajeros;
+	}
+
+	public void setPasajeros(List<User> pasajeros) {
+		this.pasajeros = pasajeros;
+	}
+
 	public Viaje(int código, Lugares lugarOrigen, Lugares lugarDestino, Lugares puntosRecogida, double precio,
-			User conductor, String coche, short plazas, boolean visibilidad) {
+				 User conductor, String coche, short plazas, boolean visibilidad) {
 		super();
 		this.código = código;
 		this.lugarOrigen = lugarOrigen;

@@ -1,10 +1,6 @@
 package ingsoftware.fuengiuma.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import java.util.List;
 import java.util.Objects;
@@ -15,22 +11,39 @@ public class User {
     private String nombre;
 
     @Id
-    private Integer telefono;
-    private String contraseña;
-    private Boolean visto;
-    
-	//@ManyToMany (mappedBy= "pasajeros")
-	//private List<Viaje> viajesPasajeros;
-	
-//	@OneToMany (mappedBy= "conductor") 
-	//private List<Viaje> viajesConductor;
-	
+    @GeneratedValue
+    private int id;
 
-    public User(String nombre, Integer telefono, String contraseña) {
+    private String telefono;
+    private String contrasena;
+    private Boolean visto = True;
+    
+	@ManyToMany (mappedBy= "pasajeros")
+	private List<Viaje> viajesPasajeros;
+	
+	@OneToMany (mappedBy= "conductor")
+	private List<Viaje> viajesConductor;
+
+    public List<Viaje> getViajesPasajeros() {
+        return viajesPasajeros;
+    }
+
+    public List<Viaje> getViajesConductor() {
+        return viajesConductor;
+    }
+
+    public void setViajesConductor(List<Viaje> viajesConductor) {
+        this.viajesConductor = viajesConductor;
+    }
+
+    public void setViajesPasajeros(List<Viaje> viajesPasajeros) {
+        this.viajesPasajeros = viajesPasajeros;
+    }
+
+    public User(String nombre, String telefono, String contrasena) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.contraseña = contraseña;
-        this.visto = true;
     }
 
     
@@ -38,7 +51,7 @@ public class User {
         return nombre;
     }
 
-    public int getTelefono() {
+    public Integer getTelefono() {
         return telefono;
     }
 
@@ -54,8 +67,10 @@ public class User {
         this.nombre = nombre;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(Integer telefono) {
         this.telefono = telefono;
+
+
     }
 
     public void setContraseña(String contraseña) {
@@ -66,12 +81,12 @@ public class User {
         this.visto = visto;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(telefono, user.telefono) ;
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        User user = (User) object;
+        return telefono.equals(user.telefono);
     }
 
     @Override

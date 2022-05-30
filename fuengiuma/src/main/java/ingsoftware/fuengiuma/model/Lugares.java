@@ -3,6 +3,7 @@ package ingsoftware.fuengiuma.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
@@ -10,6 +11,9 @@ import javax.persistence.ManyToMany;
 public class Lugares {
 
     @Id
+    @GeneratedValue
+    private int id;
+
     private short latitud;
     //@Id
     private short longitud;
@@ -20,14 +24,12 @@ public class Lugares {
 
 	private String nombre;
 
-   /* @ManyToMany(mappedBy = "origen")
+    @ManyToMany
     private List<Viaje> viajesOrigen;
 
-    @ManyToMany(mappedBy = "destino")
+    @ManyToMany
     private List<Viaje> viajesDestino;
-<<<<<<< HEADz
-*/
-=======
+
 
     public Lugares(short latitud, short longitud, String nombre) {
         this.latitud = latitud;
@@ -35,7 +37,7 @@ public class Lugares {
         this.nombre = nombre;
     }
 
->>>>>>> refs/remotes/origin/main
+
     public short getLatitud() {
         return latitud;
     }
