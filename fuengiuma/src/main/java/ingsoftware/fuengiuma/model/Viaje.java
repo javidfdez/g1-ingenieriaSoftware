@@ -33,12 +33,18 @@ public class Viaje {
 	@GeneratedValue
 	private int id;
 
+<<<<<<< HEAD
 
 	@DateTimeFormat(iso = ISO.DATE)
+=======
+	
+    @DateTimeFormat(iso = ISO.DATE)
+>>>>>>> refs/remotes/origin/main
 	private Date HoraSalida;
 	@DateTimeFormat(iso = ISO.DATE)
 	private Date HoraLlegada;
 	private double precio;
+<<<<<<< HEAD
 	private String coche;
 	private short plazas;
 	private boolean visibilidad;
@@ -82,6 +88,108 @@ public class Viaje {
 
 	public void setHoraLlegada(Date horaLlegada) {
 		HoraLlegada = horaLlegada;
+=======
+	private String coche;    
+	private short plazas; 
+	private boolean visibilidad;
+	
+	@ManyToMany (mappedBy="viajesOrigen")
+	private List<Lugares> puntosRecogida;
+	
+	@ManyToMany (mappedBy="viajesDestino")
+	private List<Lugares> destino;
+	
+	@ManyToMany
+	private List<User> pasajeros;
+	
+	@ManyToOne 
+	private User conductor;
+
+	public List<Lugares> getOrigen() {
+		return origen;
+	}
+
+	public void setOrigen(List<Lugares> origen) {
+		this.origen = origen;
+	}
+
+	public List<Lugares> getDestino() {
+		return destino;
+	}
+
+	public void setDestino(List<Lugares> destino) {
+		this.destino = destino;
+	}
+
+	public List<User> getPasajeros() {
+		return pasajeros;
+	}
+
+	public void setPasajeros(List<User> pasajeros) {
+		this.pasajeros = pasajeros;
+	}
+
+	public Viaje(int código, Lugares lugarOrigen, Lugares lugarDestino, Lugares puntosRecogida, double precio,
+				 User conductor, String coche, short plazas, boolean visibilidad) {
+		super();
+		this.código = código;
+		this.lugarOrigen = lugarOrigen;
+		this.lugarDestino = lugarDestino;
+		this.puntosRecogida = puntosRecogida;
+		this.precio = precio;
+		this.conductor = conductor;
+		this.coche = coche;
+		this.plazas = plazas;
+		this.visibilidad = visibilidad;
+	}
+	@Override
+	public String toString() {
+		return "Viaje [código=" + código + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + código;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Viaje other = (Viaje) obj;
+		if (código != other.código)
+			return false;
+		return true;
+	}
+	public int getCódigo() {
+		return código;
+	}
+	public void setCódigo(int código) {
+		this.código = código;
+	}
+	public Lugares getLugarOrigen() {
+		return lugarOrigen;
+	}
+	public void setLugarOrigen(Lugares lugarOrigen) {
+		this.lugarOrigen = lugarOrigen;
+	}
+	public Lugares getLugarDestino() {
+		return lugarDestino;
+	}
+	public void setLugarDestino(Lugares lugarDestino) {
+		this.lugarDestino = lugarDestino;
+	}
+	public Lugares getPuntosRecogida() {
+		return puntosRecogida;
+	}
+	public void setPuntosRecogida(Lugares puntosRecogida) {
+		this.puntosRecogida = puntosRecogida;
+>>>>>>> refs/remotes/origin/main
 	}
 
 	public double getPrecio() {
@@ -90,6 +198,15 @@ public class Viaje {
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
+<<<<<<< HEAD
+=======
+	}
+	public User getConductor() {
+		return conductor;
+	}
+	public void setConductor(User conductor) {
+		this.conductor = conductor;
+>>>>>>> refs/remotes/origin/main
 	}
 
 	public String getCoche() {
@@ -114,6 +231,7 @@ public class Viaje {
 
 	public void setVisibilidad(boolean visibilidad) {
 		this.visibilidad = visibilidad;
+<<<<<<< HEAD
 	}
 
 	public List<Lugares> getPuntosRecogida() {
@@ -176,5 +294,7 @@ public class Viaje {
 				", pasajeros=" + pasajeros +
 				", conductor=" + conductor +
 				'}';
+=======
+>>>>>>> refs/remotes/origin/main
 	}
 }
