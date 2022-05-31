@@ -3,15 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>Listado de Viajes</title>
+		<style>
+		table {
+		  border-collapse: collapse;
+		  border-spacing: 0;
+		  width: 100%;
+		  border: 1px solid #ddd;
+		}
+
+		th, td {
+		  text-align: left;
+		  padding: 16px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #f2f2f2;
+		}
+	</style>
     </head>
     <body>
-        <h1 class="negro">Listado de Viajes</h1>
-        
+        <h1 align="center">Listado de Viajes</h1>
+
         <table>
-        	<thead>
-        		<tr><td>Hora salida   .</td><td>.   Hora llegada   .</td><td>.   Precio   .</td><td>.   Plazas   .</td><td>.   Conductor  </td></tr>
-        	</thead>
-        	<tbody>
+        	<tr>
+				<th>Hora de Salida</th>
+				<th>Hora de Llegada</th>
+				<th>Precio</th>
+				<th>Plazas Disponibles</th>
+				<th>Conductor</th>
+			</tr>
         		<tr th:each="v: ${listaViajes}">
         			<td th:text="${v.HoraSalida}"></td>
 					<td th:text="${v.HoraLlegada}"></td>
@@ -19,8 +39,6 @@
 					<td th:text="${v.plazas}"></td>
 					<td th:text="${v.conductor.nombre}"></td>
 				</tr>
-        	</tbody>
-        
         </table>
     </body>
 </html>
