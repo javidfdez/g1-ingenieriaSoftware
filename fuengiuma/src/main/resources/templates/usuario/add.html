@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Resgistrarse</title>
+</head>
+<body>
+	<h1 align=center>Nuevo usuario</h1>
+	<form th:action="@{/personas/save}" method="post" th:object="${persona}">
+		
+		<div style="margin-left:42%">
+			<label for="nombre" >Apodo</label>
+			<input type="text" id="nombre" th:field="*{nombre}" style="width : 200px; margin-left: 28px">
+		</div>
+		
+		<div style="margin-left:42%">
+			<label for="apellidos">Telefono</label>
+			<input type="text" id="apellidos" th:field="*{apellidos}" style="width : 200px;  margin-left: 15px">
+		</div>
+		<div style="margin-left:42%">
+			<label for="apellidos">Contraseña</label>
+			<input type="text" id="apellidos" th:field="*{apellidos}" style="width : 200px">
+		</div>
+		
+		<div style="margin-left:50%">
+			
+			<input type="submit" value="Enviar">
+		</div>
+	</form>
+</body>
+</html>
