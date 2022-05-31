@@ -13,7 +13,7 @@ public class Lugares {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
     private short latitud;
     private short longitud;
@@ -30,11 +30,11 @@ public class Lugares {
 
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
