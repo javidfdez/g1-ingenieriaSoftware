@@ -17,12 +17,12 @@ public class Usuario {
     private Integer telefono;
     private String contrasena;
     private Boolean visto = true;
-    
-	@ManyToMany (mappedBy= "pasajeros")
-	private List<Viaje> viajesPasajeros;
-	
-	@OneToMany (mappedBy= "conductor")
-	private List<Viaje> viajesConductor;
+
+    @ManyToMany (mappedBy= "pasajeros")
+    private List<Viaje> viajesPasajeros;
+
+    @OneToMany (mappedBy= "conductor")
+    private List<Viaje> viajesConductor;
 
     public Usuario(){
 

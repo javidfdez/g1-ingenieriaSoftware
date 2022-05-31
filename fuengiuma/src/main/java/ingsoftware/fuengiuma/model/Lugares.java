@@ -1,10 +1,7 @@
 package ingsoftware.fuengiuma.model;
 
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Objects;
-=======
->>>>>>> refs/remotes/origin/main
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,33 +14,18 @@ public class Lugares {
     @Id
     @GeneratedValue
     private int id;
-<<<<<<< HEAD
 
     private short latitud;
     private short longitud;
 
     private String nombre;
 
-=======
-
-    private short latitud;
-    //@Id
-    private short longitud;
-    @Override
-	public String toString() {
-		return "Lugares [latitud=" + latitud + ", longitud=" + longitud + "]";
-	}
-
-	private String nombre;
-
->>>>>>> refs/remotes/origin/main
     @ManyToMany
     private List<Viaje> viajesOrigen;
 
     @ManyToMany
     private List<Viaje> viajesDestino;
 
-<<<<<<< HEAD
     public Lugares(){
 
     }
@@ -54,15 +36,7 @@ public class Lugares {
 
     public void setId(int id) {
         this.id = id;
-=======
-
-    public Lugares(short latitud, short longitud, String nombre) {
-        this.latitud = latitud;
-        this.longitud = longitud;
-        this.nombre = nombre;
->>>>>>> refs/remotes/origin/main
     }
-
 
     public short getLatitud() {
         return latitud;
