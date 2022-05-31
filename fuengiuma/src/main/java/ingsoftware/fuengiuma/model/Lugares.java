@@ -1,6 +1,10 @@
 package ingsoftware.fuengiuma.model;
 
+import java.util.List;
+import java.util.Objects;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
@@ -8,21 +12,30 @@ import javax.persistence.ManyToMany;
 public class Lugares {
 
     @Id
+    @GeneratedValue
+    private int id;
+
     private short latitud;
-    @Id
     private short longitud;
+
     private String nombre;
 
-    @ManyToMany(mappedBy = "origen")
+    @ManyToMany
     private List<Viaje> viajesOrigen;
 
-    @ManyToMany(mappedBy = "destino")
+    @ManyToMany
     private List<Viaje> viajesDestino;
 
-    public Lugares(short latitud, short longitud, String nombre) {
-        this.latitud = latitud;
-        this.longitud = longitud;
-        this.nombre = nombre;
+    public Lugares(){
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public short getLatitud() {
@@ -49,23 +62,44 @@ public class Lugares {
         this.nombre = nombre;
     }
 
+    public List<Viaje> getViajesOrigen() {
+        return viajesOrigen;
+    }
+
+    public void setViajesOrigen(List<Viaje> viajesOrigen) {
+        this.viajesOrigen = viajesOrigen;
+    }
+
+    public List<Viaje> getViajesDestino() {
+        return viajesDestino;
+    }
+
+    public void setViajesDestino(List<Viaje> viajesDestino) {
+        this.viajesDestino = viajesDestino;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Lugares lugares = (Lugares) o;
-
-        if (latitud != lugares.latitud) return false;
-        if (longitud != lugares.longitud) return false;
-        return nombre != null ? nombre.equals(lugares.nombre) : lugares.nombre == null;
+        return id == lugares.id;
     }
 
     @Override
     public int hashCode() {
-        int result = latitud;
-        result = 31 * result + (int) longitud;
-        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
-        return result;
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Lugares{" +
+                "id=" + id +
+                ", latitud=" + latitud +
+                ", longitud=" + longitud +
+                ", nombre='" + nombre + '\'' +
+                ", viajesOrigen=" + viajesOrigen +
+                ", viajesDestino=" + viajesDestino +
+                '}';
     }
 }

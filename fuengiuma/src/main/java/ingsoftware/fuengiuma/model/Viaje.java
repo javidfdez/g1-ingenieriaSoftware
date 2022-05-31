@@ -4,142 +4,177 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-
+import javax.persistence.ManyToOne;
+/*
+ * 
+ * Hecho por:
+ * 
+ * 
+ * Iván Lago
+ * Carlos Ríos
+ * Javier Díaz
+ * Jose Ismael Marinca 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 @Entity
 public class Viaje {
 
 	@Id
 	@GeneratedValue
-	private int Código;
-	
-	private Lugares LugarOrigen;
-	private Lugares LugarDestino;
-	private Lugares PuntosRecogida;
-	
-    @DateTimeFormat(iso = ISO.DATE)
+	private int id;
+
+
+	@DateTimeFormat(iso = ISO.DATE)
 	private Date HoraSalida;
-	private Date HoraLlegada;   
-	private double Precio;  
-	private User Conductor;   
-	private String Coche;    
-	private short Plazas; 
-	private boolean Visibilidad;
-	
-	@ManyToMany (mappedBy="viajesOrigen")
-	private List<Lugares> origen;
-	
-	@ManyToMany (mappedBy="viajesDestino")
+	@DateTimeFormat(iso = ISO.DATE)
+	private Date HoraLlegada;
+	private double precio;
+	private String coche;
+	private short plazas;
+	private boolean visibilidad;
+
+	@ManyToMany(mappedBy = "viajesOrigen")
+	private List<Lugares> puntosRecogida;
+
+	@ManyToMany(mappedBy = "viajesDestino")
 	private List<Lugares> destino;
-	
-	
-	
-	
-	public Viaje(int código, Lugares lugarOrigen, Lugares lugarDestino, Lugares puntosRecogida, Date horaSalida,
-			Date horaLlegada, double precio, User conductor, String coche, short plazas, boolean visibilidad) {
-		Código = código;
-		LugarOrigen = lugarOrigen;
-		LugarDestino = lugarDestino;
-		PuntosRecogida = puntosRecogida;
-		HoraSalida = horaSalida;
-		HoraLlegada = horaLlegada;
-		Precio = precio;
-		Conductor = conductor;
-		Coche = coche;
-		Plazas = plazas;
-		Visibilidad = visibilidad;
+
+	@ManyToMany
+	private List<Usuario> pasajeros;
+
+	@ManyToOne
+	private Usuario conductor;
+
+
+	public Viaje(){
+
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Código;
-		return result;
+
+	public int getId() {
+		return id;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Viaje other = (Viaje) obj;
-		if (Código != other.Código)
-			return false;
-		return true;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getCódigo() {
-		return Código;
-	}
-	public void setCódigo(int código) {
-		Código = código;
-	}
-	public Lugares getLugarOrigen() {
-		return LugarOrigen;
-	}
-	public void setLugarOrigen(Lugares lugarOrigen) {
-		LugarOrigen = lugarOrigen;
-	}
-	public Lugares getLugarDestino() {
-		return LugarDestino;
-	}
-	public void setLugarDestino(Lugares lugarDestino) {
-		LugarDestino = lugarDestino;
-	}
-	public Lugares getPuntosRecogida() {
-		return PuntosRecogida;
-	}
-	public void setPuntosRecogida(Lugares puntosRecogida) {
-		PuntosRecogida = puntosRecogida;
-	}
+
 	public Date getHoraSalida() {
 		return HoraSalida;
 	}
+
 	public void setHoraSalida(Date horaSalida) {
 		HoraSalida = horaSalida;
 	}
+
 	public Date getHoraLlegada() {
 		return HoraLlegada;
 	}
+
 	public void setHoraLlegada(Date horaLlegada) {
 		HoraLlegada = horaLlegada;
 	}
+
 	public double getPrecio() {
-		return Precio;
+		return precio;
 	}
+
 	public void setPrecio(double precio) {
-		Precio = precio;
+		this.precio = precio;
 	}
-	public User getConductor() {
-		return Conductor;
-	}
-	public void setConductor(User conductor) {
-		Conductor = conductor;
-	}
+
 	public String getCoche() {
-		return Coche;
+		return coche;
 	}
+
 	public void setCoche(String coche) {
-		Coche = coche;
+		this.coche = coche;
 	}
+
 	public short getPlazas() {
-		return Plazas;
+		return plazas;
 	}
+
 	public void setPlazas(short plazas) {
-		Plazas = plazas;
+		this.plazas = plazas;
 	}
+
 	public boolean isVisibilidad() {
-		return Visibilidad;
+		return visibilidad;
 	}
+
 	public void setVisibilidad(boolean visibilidad) {
-		Visibilidad = visibilidad;
+		this.visibilidad = visibilidad;
 	}
-	
-	
-	
+
+	public List<Lugares> getPuntosRecogida() {
+		return puntosRecogida;
+	}
+
+	public void setPuntosRecogida(List<Lugares> puntosRecogida) {
+		this.puntosRecogida = puntosRecogida;
+	}
+
+	public List<Lugares> getDestino() {
+		return destino;
+	}
+
+	public void setDestino(List<Lugares> destino) {
+		this.destino = destino;
+	}
+
+	public List<Usuario> getPasajeros() {
+		return pasajeros;
+	}
+
+	public void setPasajeros(List<Usuario> pasajeros) {
+		this.pasajeros = pasajeros;
+	}
+
+	public Usuario getConductor() {
+		return conductor;
+	}
+
+	public void setConductor(Usuario conductor) {
+		this.conductor = conductor;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Viaje viaje = (Viaje) o;
+		return id == viaje.id;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public String toString() {
+		return "Viaje{" +
+				"id=" + id +
+				", HoraSalida=" + HoraSalida +
+				", HoraLlegada=" + HoraLlegada +
+				", precio=" + precio +
+				", coche='" + coche + '\'' +
+				", plazas=" + plazas +
+				", visibilidad=" + visibilidad +
+				", puntosRecogida=" + puntosRecogida +
+				", destino=" + destino +
+				", pasajeros=" + pasajeros +
+				", conductor=" + conductor +
+				'}';
+	}
 }
