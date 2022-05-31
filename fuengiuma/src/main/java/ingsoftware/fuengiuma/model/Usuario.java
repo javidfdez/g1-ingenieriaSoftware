@@ -14,7 +14,7 @@ public class Usuario {
     @GeneratedValue
     private Integer id;
 
-    private Integer telefono;
+    private String telefono;
     private String contrasena;
     private Boolean visto = true;
 
@@ -52,11 +52,11 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public Integer getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
