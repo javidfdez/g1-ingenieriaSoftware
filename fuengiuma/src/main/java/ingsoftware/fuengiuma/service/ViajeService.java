@@ -17,6 +17,9 @@ public class ViajeService {
 	public List<Viaje> getAll(){
 		return viajeRepository.findAll();
 		}
+	public void save(Viaje v){
+		viajeRepository.saveAndFlush(v);
+	}
 	
 	
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ingsoftware.fuengiuma.model.Viaje;
@@ -27,9 +28,16 @@ public class ViajeController {
 	
 	@RequestMapping("/viajes/add")
 	public String addViajes(Model model) {
-		
+		model.addAttribute("viajes", new Viaje());
 		return "viajes/add";
 	}
+
+	@PostMapping("/viajes/save")
+	public String saveViaje(Viaje v){
+		viajeService.save(v);
+		return "redirect:/viajes";
+	}
+
 	@RequestMapping("/viajes/edit/{id}")
 	public String editViajes(Model model) {
 		

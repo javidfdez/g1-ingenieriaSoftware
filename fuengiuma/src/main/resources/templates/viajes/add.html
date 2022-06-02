@@ -6,25 +6,27 @@
 </head>
 <body>
 <h1 align=center>Crear Viaje</h1>
-<form >
+<form th:action ="@{/viajes/save}" method="post" th:object="${viaje}">
 
     <div style="margin-left:42%">
         <label for="HoraSalida" >Hora de salida</label>
-        <input type="datetime-local" id="HoraSalida"  style="width : 200px; margin-left: 44px">
+        <input type="datetime-local" id="HoraSalida"  style="width : 200px; margin-left: 44px" th:field = "{HoraSalida}">
     </div>
 
     <div style="margin-left:42%">
         <label for="HoraLlegada">Hora de llegada</label>
-        <input type="datetime-local" id="HoraLlegada" style="width : 200px;  margin-left: 35px">
+        <input type="datetime-local" id="HoraLlegada" style="width : 200px;  margin-left: 35px" th:field = "{HoraLlegada}">
     </div>
+
     <div style="margin-left:42%">
         <label for="precio">Precio</label>
-        <input type="text" id="precio" style="width : 200px;  margin-left: 95px">
+        <input type="text" id="precio" style="width : 200px;  margin-left: 95px" th:field = "{precio}">
     </div>
     <div style="margin-left:42%">
         <label for="plazas">Número de plazas</label>
-        <input type="text" id="plazas" style="width : 200px;  margin-left: 20px">
+        <input type="text" id="plazas" style="width : 200px;  margin-left: 20px" th:field = "{plazas}">
     </div>
+
 
     <div style="margin-left:50%">
 

@@ -134,6 +134,16 @@ public class Viaje {
 		this.conductor = conductor;
 	}
 
+//	public Lugares get1PuntosRecogida() {
+//		return puntosRecogida.get(0);
+//	}
+//
+//	public Lugares get1Destino() {
+//		return destino.get(0);
+//	}
+
+
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
