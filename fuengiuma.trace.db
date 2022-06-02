@@ -738,3 +738,15 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1178)
 	at org.h2.mvstore.FileStore.open(FileStore.java:154)
 	... 21 more
+2022-06-02 19:11:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'6737282932' (USUARIO: ""TELEFONO"" INTEGER)"
+Data conversion error converting "'6737282932' (USUARIO: ""TELEFONO"" INTEGER)"; SQL statement:
+insert into usuario (contrasena, nombre, telefono, visto, id) values (?, ?, ?, ?, ?) [22018-212]
+2022-06-02 19:21:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (USUARIO: ""TELEFONO"" INTEGER)"
+Data conversion error converting "'' (USUARIO: ""TELEFONO"" INTEGER)"; SQL statement:
+insert into usuario (contrasena, nombre, telefono, visto, id) values (?, ?, ?, ?, ?) [22018-212]
+2022-06-02 19:21:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (USUARIO: ""TELEFONO"" INTEGER)"
+Data conversion error converting "'' (USUARIO: ""TELEFONO"" INTEGER)"; SQL statement:
+insert into usuario (contrasena, nombre, telefono, visto, id) values (?, ?, ?, ?, ?) [22018-212]

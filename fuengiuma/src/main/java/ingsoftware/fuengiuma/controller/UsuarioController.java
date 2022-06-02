@@ -9,9 +9,14 @@ import ingsoftware.fuengiuma.service.ViajeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ingsoftware.fuengiuma.model.Usuario;
+
+import javax.websocket.server.PathParam;
 
 @Controller
 public class UsuarioController {
@@ -29,15 +34,24 @@ public class UsuarioController {
 
 	@RequestMapping("/usuario/add")
 	public String addPersona(Model model) {
+		model.addAttribute("usuario", new Usuario());
 		return "usuario/add";
 	}
+
+	@PostMapping("/usuario/save")
+	public String saveUsuario(Usuario u){
+		usuarioService.save(u);
+		return "redirect:/";
+	}
 	@RequestMapping("/usuario/edit/{id}")
-	public String editPersona(Model model) {
-		return "usuario/edit";
+	public String editUsuario(@PathVariable("id") Integer id, Model model) {
+		model.addAttribute("usuario", usuarioService.getById(id));
+		return "usuario/add";
 	}
 	@RequestMapping("/usuario/delete/{id}")
-	public String deletePersona(Model model) {
-		return "usuario/delete";
+	public String deleteUsuario(@PathVariable("id") Integer id) {
+		usuarioService.delete(id);
+		return "redirect:/usuario";
 	}
 	
 	

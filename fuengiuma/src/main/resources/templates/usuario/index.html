@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Usuario</title>
+    <style>
+		table {
+		  border-collapse: collapse;
+		  border-spacing: 0;
+		  width: 100%;
+		  border: 1px solid #ddd;
+		}
+
+		th, td {
+		  text-align: left;
+		  padding: 16px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+<h1 align="center">Listado de Usuario</h1>
+
+<table>
+    <tr>
+        <th>Apodo</th>
+        <th>Telefono</th>
+        <th>Contraseña</th>
+    </tr>
+    <tr th:each="u: ${listaUsuario}">
+        <td th:text="${u.nombre}"></td>
+        <td th:text="${u.telefono}"></td>
+        <td th:text="${u.contrasena}"></td>
+        <td><a th:href="@{/usuario/edit/{id}(id=${u.id})}">Editar</a></td>
+        <td><a th:href="@{/usuario/delete/{id}(id=${u.id})}">Borrar</a></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -16,4 +16,16 @@ public class UsuarioService {
     public List<Usuario> getAll(){
         return usuarioRepository.findAll();
     }
+
+    public void save(Usuario u) {
+        usuarioRepository.saveAndFlush(u);
+    }
+
+    public void delete(Integer id) {
+        usuarioRepository.deleteById(id);
+    }
+
+    public Usuario getById(Integer id) {
+        return usuarioRepository.getOne(id);
+    }
 }
