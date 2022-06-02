@@ -28,6 +28,8 @@
         	<tr>
 				<th>Hora de Salida</th>
 				<th>Hora de Llegada</th>
+<!--				<th>Punto de recogida</th>-->
+<!--				<th>Destino</th>-->
 				<th>Precio</th>
 				<th>Plazas Disponibles</th>
 				<th>Conductor</th>
@@ -35,6 +37,8 @@
         		<tr th:each="v: ${listaViajes}">
         			<td th:text="${v.HoraSalida}"></td>
 					<td th:text="${v.HoraLlegada}"></td>
+<!--					<td th:text="${v.get1PuntosRecogida()}"></td>-->
+<!--					<td th:text="${v.get1Destino()}"></td>-->
 					<td th:text="${v.precio}"></td>
 					<td th:text="${v.plazas}"></td>
 					<td th:text="${v.conductor.nombre}"></td>
