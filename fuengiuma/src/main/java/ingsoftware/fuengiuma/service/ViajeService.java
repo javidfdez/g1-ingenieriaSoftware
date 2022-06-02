@@ -16,10 +16,17 @@ public class ViajeService {
 	
 	public List<Viaje> getAll(){
 		return viajeRepository.findAll();
-		}
+	}
+
 	public void save(Viaje v){
 		viajeRepository.saveAndFlush(v);
 	}
-	
-	
+
+	public void delete(Integer id){
+		viajeRepository.deleteById(id);
+	}
+
+	public Viaje getById(Integer id) {
+		return viajeRepository.getOne(id);
+	}
 }

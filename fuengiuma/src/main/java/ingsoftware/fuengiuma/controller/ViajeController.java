@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ingsoftware.fuengiuma.model.Viaje;
 import ingsoftware.fuengiuma.service.ViajeService;
+
 
 @Controller
 public class ViajeController {
@@ -28,7 +30,7 @@ public class ViajeController {
 	
 	@RequestMapping("/viajes/add")
 	public String addViajes(Model model) {
-		model.addAttribute("viajes", new Viaje());
+		model.addAttribute("viaje", new Viaje());
 		return "viajes/add";
 	}
 
@@ -39,13 +41,20 @@ public class ViajeController {
 	}
 
 	@RequestMapping("/viajes/edit/{id}")
-	public String editViajes(Model model) {
-		
-		return "viajes/edit";
+	public String editViajes(@PathVariable("id") Integer id, Model model) {
+		model.addAttribute("viaje", viajeService.getById(id));
+		return "viajes/add";
 	}
+
+	@RequestMapping("/viajes/view/{id}")
+	public String viewViajes(@PathVariable("id") Integer id, Model model) {
+		model.addAttribute("viaje", viajeService.getById(id));
+		return "viajes/view";
+	}
+
 	@RequestMapping("/viajes/delete/{id}")
-	public String deleteViajes() {
-		
+	public String deleteViajes(@PathVariable("id") Integer id) {
+		viajeService.delete(id);
 		return "redirect:/viajes";
 	}
 	

@@ -3,14 +3,8 @@ package ingsoftware.fuengiuma.model;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Viaje {
@@ -20,27 +14,18 @@ public class Viaje {
 	private Integer id;
 
 
+	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
 	private Date HoraSalida;
+	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
 	private Date HoraLlegada;
 	private double precio;
 	private String coche;
 	private short plazas;
 	private boolean visibilidad;
-
-	@ManyToMany(mappedBy = "viajesOrigen")
-	private List<Lugares> puntosRecogida;
-
-	@ManyToMany(mappedBy = "viajesDestino")
-	private List<Lugares> destino;
-
-	@ManyToMany
-	private List<Usuario> pasajeros;
-
-	@ManyToOne
-	private Usuario conductor;
-
+	private String origen;
+	private String destino;
 
 	public Viaje(){
 
@@ -102,59 +87,35 @@ public class Viaje {
 		this.visibilidad = visibilidad;
 	}
 
-	public List<Lugares> getPuntosRecogida() {
-		return puntosRecogida;
+	public String getOrigen() {
+		return origen;
 	}
 
-	public void setPuntosRecogida(List<Lugares> puntosRecogida) {
-		this.puntosRecogida = puntosRecogida;
+	public void setOrigen(String origen) {
+		this.origen = origen;
 	}
 
-	public List<Lugares> getDestino() {
+	public String getDestino() {
 		return destino;
 	}
 
-	public void setDestino(List<Lugares> destino) {
+	public void setDestino(String destino) {
 		this.destino = destino;
 	}
-
-	public List<Usuario> getPasajeros() {
-		return pasajeros;
-	}
-
-	public void setPasajeros(List<Usuario> pasajeros) {
-		this.pasajeros = pasajeros;
-	}
-
-	public Usuario getConductor() {
-		return conductor;
-	}
-
-	public void setConductor(Usuario conductor) {
-		this.conductor = conductor;
-	}
-
-//	public Lugares get1PuntosRecogida() {
-//		return puntosRecogida.get(0);
-//	}
-//
-//	public Lugares get1Destino() {
-//		return destino.get(0);
-//	}
-
-
 
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
+
 		Viaje viaje = (Viaje) o;
-		return id == viaje.id;
+
+		return id.equals(viaje.id);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return id.hashCode();
 	}
 
 	@Override
@@ -167,10 +128,8 @@ public class Viaje {
 				", coche='" + coche + '\'' +
 				", plazas=" + plazas +
 				", visibilidad=" + visibilidad +
-				", puntosRecogida=" + puntosRecogida +
-				", destino=" + destino +
-				", pasajeros=" + pasajeros +
-				", conductor=" + conductor +
+				", origen='" + origen + '\'' +
+				", destino='" + destino + '\'' +
 				'}';
 	}
 }

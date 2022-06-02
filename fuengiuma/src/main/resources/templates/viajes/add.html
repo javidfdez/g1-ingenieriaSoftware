@@ -5,28 +5,40 @@
     <title>Crear Viaje</title>
 </head>
 <body>
-<h1 align=center>Crear Viaje</h1>
-<form th:action ="@{/viajes/save}" method="post" th:object="${viaje}">
+<div th:switch="${viaje.id}">
+    <h1 th:case="null" align="center">Crear Viaje</h1>
+    <h1 th:case="*" align="center">Editar Viaje</h1>
+</div>
+<form th:action="@{/viajes/save}" method="post" th:object="${viaje}">
+
+    <input type="hidden" id="id" th:field="*{id}">
 
     <div style="margin-left:42%">
         <label for="HoraSalida" >Hora de salida</label>
-        <input type="datetime-local" id="HoraSalida"  style="width : 200px; margin-left: 44px" th:field = "{HoraSalida}">
+        <input type="datetime-local" id="HoraSalida" th:field="*{HoraSalida}" style="width : 200px; margin-left: 44px">
     </div>
 
     <div style="margin-left:42%">
         <label for="HoraLlegada">Hora de llegada</label>
-        <input type="datetime-local" id="HoraLlegada" style="width : 200px;  margin-left: 35px" th:field = "{HoraLlegada}">
+        <input type="datetime-local" id="HoraLlegada" th:field="*{HoraLlegada}" style="width : 200px;  margin-left: 35px">
     </div>
 
     <div style="margin-left:42%">
         <label for="precio">Precio</label>
-        <input type="text" id="precio" style="width : 200px;  margin-left: 95px" th:field = "{precio}">
+        <input type="text" id="precio" th:field="*{precio}" style="width : 200px;  margin-left: 95px">
     </div>
     <div style="margin-left:42%">
         <label for="plazas">Número de plazas</label>
-        <input type="text" id="plazas" style="width : 200px;  margin-left: 20px" th:field = "{plazas}">
+        <input type="text" id="plazas" th:field="*{plazas}" style="width : 200px;  margin-left: 20px">
     </div>
-
+    <div style="margin-left:42%">
+        <label for="origen">Origen</label>
+        <input type="text" id="origen" th:field="*{origen}" style="width : 200px;  margin-left: 95px">
+    </div>
+    <div style="margin-left:42%">
+        <label for="destino">Destino</label>
+        <input type="text" id="destino" th:field="*{destino}" style="width : 200px;  margin-left: 93px">
+    </div>
 
     <div style="margin-left:50%">
 

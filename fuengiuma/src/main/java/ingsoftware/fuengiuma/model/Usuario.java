@@ -2,7 +2,6 @@ package ingsoftware.fuengiuma.model;
 
 import javax.persistence.*;
 
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -18,30 +17,8 @@ public class Usuario {
     private String contrasena;
     private Boolean visto = true;
 
-    @ManyToMany (mappedBy= "pasajeros")
-    private List<Viaje> viajesPasajeros;
-
-    @OneToMany (mappedBy= "conductor")
-    private List<Viaje> viajesConductor;
-
     public Usuario(){
 
-    }
-
-    public List<Viaje> getViajesPasajeros() {
-        return viajesPasajeros;
-    }
-
-    public List<Viaje> getViajesConductor() {
-        return viajesConductor;
-    }
-
-    public void setViajesConductor(List<Viaje> viajesConductor) {
-        this.viajesConductor = viajesConductor;
-    }
-
-    public void setViajesPasajeros(List<Viaje> viajesPasajeros) {
-        this.viajesPasajeros = viajesPasajeros;
     }
 
     public String getNombre() {
