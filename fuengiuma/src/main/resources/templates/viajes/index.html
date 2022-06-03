@@ -32,15 +32,15 @@
 				<th>Hora de Llegada</th>
 				<th>Origen</th>
 				<th>Destino</th>
-				<th>Precio</th>
+				<th>Precio (€)</th>
 				<th>Plazas Disponibles</th>
 			</tr>
         		<tr th:each="v: ${listaViajes}">
-        			<td th:text="${v.HoraSalida}"></td>
-					<td th:text="${v.HoraLlegada}"></td>
+        			<td th:text="${#dates.format(v.horaSalida, 'dd-MM-yyyy hh:mm')}"></td>
+					<td th:text="${#dates.format(v.horaLlegada, 'dd-MM-yyyy hh:mm')}"></td>
 					<td th:text="${v.origen}"></td>
 					<td th:text="${v.destino}"></td>
-					<td th:text="${v.precio}"></td>
+					<td th:text="${v.precio}"></span></td>
 					<td th:text="${v.plazas}"></td>
 					<td><a th:href="@{/viajes/delete/{id}(id=${v.id})}">Borrar</a></td>
 					<td><a th:href="@{/viajes/edit/{id}(id=${v.id})}">Editar</a></td>

@@ -1,30 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Ver viaje</title>
+    <style>
+		table {
+		  border-collapse: collapse;
+		  border-spacing: 0;
+		  width: 50%;
+		  border: 1px solid #ddd;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+
+		th, td {
+		  text-align: left;
+		  padding: 16px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #f2f2f2;
+		}
+	</style>
 </head>
 <body>
-<h1>Ver viaje</h1>
-<div>
-    <label for="horaSalida">Hora de Salida</label>
-    <span th:text="${viaje.horaSalida}"></span>
-</div>
-<div>
-    <label for="horaLlegada">Hora de Llegada</label>
-    <span th:text="${viaje.horaLlegada}"></span>
-</div>
 
-<div>
-    <label for="origen">Origen</label>
-    <span th:text="${viaje.origen}"></span>
-</div>
-<div>
-    <label for="destino">Destino</label>
-    <span th:text="${viaje.origen}"></span>
-</div>
-<div>
-    <span>Viajes</span>
-</div>
+<h1 align="center">Ver viaje</h1>
+
+<table style="width:25%">
+    <tr>
+        <th><label for="horaSalida">Hora de Salida</label></th>
+        <td><span th:text="${#dates.format(viaje.horaSalida, 'dd-MM-yyyy hh:mm')}"></span></td>
+    </tr>
+    <tr>
+        <th><label for="horaLlegada">Hora de Llegada</label></th>
+        <td><span th:text="${#dates.format(viaje.horaLlegada, 'dd-MM-yyyy hh:mm')}"></span></td>
+    </tr>
+    <tr>
+        <th><label for="origen">Origen</label></th>
+        <td><span th:text="${viaje.origen}"></span></td>
+    </tr>
+    <tr>
+        <th><label for="destino">Destino</label></th>
+        <td><span th:text="${viaje.destino}"></span></td>
+    </tr>
+    <tr>
+        <th><label for="precio">Precio</label></th>
+        <td><span th:text="${viaje.precio}"></span> &#8364;</td>
+    </tr>
+    <tr>
+        <th><label for="plazas">Plazas disponibles</label></th>
+        <td><span th:text="${viaje.plazas}"></span></td>
+    </tr>
+    <tr>
+        <th><label for="coche">Modelo de coche</label></th>
+        <td><span th:text="${viaje.coche}"></span></td>
+    </tr>
+</table>
+<form align="center">
+    <input type="button" value="Volver" onclick="history.go(-1)">
+</form>
+
 </body>
 </html>
