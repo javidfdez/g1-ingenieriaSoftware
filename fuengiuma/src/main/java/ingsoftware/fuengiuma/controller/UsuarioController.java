@@ -51,7 +51,7 @@ public class UsuarioController {
 
 	@PostMapping("/confirmar")
 	public String comprobarUsuario(){
-		return "redirect:/usuario";
+		return "redirect:/viajes/sesionInicial";
 	}
 
 	@RequestMapping("/usuario/edit/{id}")

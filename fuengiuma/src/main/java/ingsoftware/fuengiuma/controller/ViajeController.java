@@ -57,8 +57,11 @@ public class ViajeController {
 		viajeService.delete(id);
 		return "redirect:/viajes";
 	}
-	
-	
-	
+	@RequestMapping("/viajes/sesionInicial")
+	public String sesionInicialViajes(Model model) {
+		List<Viaje> viajes = viajeService.getAll();
+		model.addAttribute("listaViajes", viajes);
+		return "viajes/sesionInicial";
+	}
 	
 }

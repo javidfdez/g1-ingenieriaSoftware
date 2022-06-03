@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Iniciar sesión</title>
+	<title>Resgistrarse</title>
 </head>
 <body>
-<h1 align=center style="margin-top: 5%">Iniciar sesión</h1>
-<form th:action="@{/usuario/save}" method="post">
+<h1 align=center>Crea tu cuenta FuengiUma</h1>
+<form th:action="@{/usuario/save}" method="post" th:object="${usuario}">
 
 	<div>
 		<table class="default"  style="margin: 0 auto">
@@ -15,20 +15,28 @@
 
 				<td><label for="nombre" style="font-size: 20px" >Apodo</label></td>
 
-				<td colspan="2"><input type="text" id="nombre"  style="width : 200px"></td>
+				<td colspan="2"><input type="text" id="nombre" th:field="*{nombre}"  style="width : 200px"></td>
 
 			</tr>
 
 			<tr>
 
-				<td><label for="contrasena" style="font-size: 20px" >Contraseña</label></td>
+				<td><label for="telefono" style="font-size: 20px" >Telefono</label></td>
 
-				<td colspan="2"><input type="text" id="contrasena"  style="width : 200px; margin-top: 5px"></td>
+				<td colspan="2"><input type="text" id="telefono" th:field="*{telefono}"  style="width : 200px"></td>
+
+			</tr>
+
+			<tr>
+
+				<td><label for="contrasena" style="font-size: 20px" >ContraseÃ±a</label></td>
+
+				<td colspan="2"><input type="text" id="contrasena" th:field="*{contrasena}"  style="width : 200px"></td>
 			<tr>
 				<td></td>
 
-				<td><input type="submit" value="Confirmar" style="width : 100px; margin-top: 5px"> </td>
-				<td><input type="submit" value="Registrarse" style="width : 103px; margin-top: 5px"></td>
+				<td><input type="submit" value="Enviar" style="width : 100px; margin-top: 5px; margin-left: 10px"> </td>
+				<td></td>
 
 			</tr>
 		</table>

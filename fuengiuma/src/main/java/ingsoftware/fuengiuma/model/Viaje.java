@@ -16,10 +16,10 @@ public class Viaje {
 
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
-	private Date HoraSalida;
+	private Date horaSalida;
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
-	private Date HoraLlegada;
+	private Date horaLlegada;
 	private double precio;
 	private String coche;
 	private short plazas;
@@ -43,19 +43,19 @@ public class Viaje {
 	}
 
 	public Date getHoraSalida() {
-		return HoraSalida;
+		return horaSalida;
 	}
 
 	public void setHoraSalida(Date horaSalida) {
-		HoraSalida = horaSalida;
+		this.horaSalida = horaSalida;
 	}
 
 	public Date getHoraLlegada() {
-		return HoraLlegada;
+		return horaLlegada;
 	}
 
 	public void setHoraLlegada(Date horaLlegada) {
-		HoraLlegada = horaLlegada;
+		this.horaLlegada = horaLlegada;
 	}
 
 	public double getPrecio() {
@@ -133,8 +133,8 @@ public class Viaje {
 	public String toString() {
 		return "Viaje{" +
 				"id=" + id +
-				", HoraSalida=" + HoraSalida +
-				", HoraLlegada=" + HoraLlegada +
+				", HoraSalida=" + horaSalida +
+				", HoraLlegada=" + horaLlegada +
 				", precio=" + precio +
 				", coche='" + coche + '\'' +
 				", plazas=" + plazas +
