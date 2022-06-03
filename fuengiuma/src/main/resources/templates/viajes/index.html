@@ -7,8 +7,10 @@
 		table {
 		  border-collapse: collapse;
 		  border-spacing: 0;
-		  width: 100%;
+		  width: 50%;
 		  border: 1px solid #ddd;
+		  margin-left: auto;
+		  margin-right: auto;
 		}
 
 		th, td {
@@ -42,6 +44,7 @@
 					<td th:text="${v.plazas}"></td>
 					<td><a th:href="@{/viajes/delete/{id}(id=${v.id})}">Borrar</a></td>
 					<td><a th:href="@{/viajes/edit/{id}(id=${v.id})}">Editar</a></td>
+					<td><a th:href="@{/viajes/view/{id}(id=${v.id})}">Ver</a></td>
 				</tr>
         </table>
     </body>

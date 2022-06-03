@@ -17,6 +17,9 @@ public class Usuario {
     private String contrasena;
     private Boolean visto = true;
 
+//    @OneToMany(mappedBy = "conductor")
+//    private Viaje conduce;
+
     public Usuario(){
 
     }
@@ -56,6 +59,14 @@ public class Usuario {
     public Integer getId() {
         return id;
     }
+
+//    public Viaje getConduce() {
+//        return conduce;
+//    }
+//
+//    public void setConduce(Viaje conduce) {
+//        this.conduce = conduce;
+//    }
 
     @Override
     public boolean equals(Object o) {
