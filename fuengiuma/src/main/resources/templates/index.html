@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-        <h1 class="negro">Hola mundo desde Spring</h1>
-    </body>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+</head>
+<body>
+<h1 align=center style="margin-top: 5%">Iniciar sesión</h1>
+
+
+    <div>
+        <table class="default"  style="margin: 0 auto">
+
+            <tr>
+
+                <td><label for="telefono" style="font-size: 20px" >telefono</label></td>
+
+                <td colspan="2"><input type="text" id="telefono"  style="width : 200px"></td>
+
+            </tr>
+
+            <tr>
+
+                <td><label for="contrasena" style="font-size: 20px" >Contraseña</label></td>
+
+                <td colspan="2"><input type="password" id="contrasena"  style="width : 200px; margin-top: 5px"></td>
+            <tr>
+                <td></td>
+
+            <form th:action="@{/confirmar}" method="post">
+                    <td><input type="submit" value="Confirmar" style="width : 100px; margin-top: 5px"> </td>
+            </form>
+
+            <form th:action="@{/register}" method="post">
+                <td><input type="submit" value="Registrarse" style="width : 103px; margin-top: 5px"></td>
+            </form>
+
+            </tr>
+        </table>
+    </div>
+
+</body>
 </html>

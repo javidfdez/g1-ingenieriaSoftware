@@ -9,23 +9,38 @@
 <form th:action="@{/usuario/save}" method="post" th:object="${usuario}">
 	<input type="hidden" id="id" th:field="*{id}">
 
-	<div style="margin-left:42%">
-		<label for="nombre" >Apodo</label>
-		<input type="text" id="nombre" th:field="*{nombre}" style="width : 200px; margin-left: 28px">
-	</div>
+	<div>
+		<table class="default"  style="margin: 0 auto">
 
-	<div style="margin-left:42%">
-		<label for="telefono">Telefono</label>
-		<input type="text" id="telefono" th:field="*{telefono}" style="width : 200px;  margin-left: 15px">
-	</div>
-	<div style="margin-left:42%">
-		<label for="contrasena">Contraseña</label>
-		<input type="password" id="contrasena" th:field="*{contrasena}" style="width : 200px">
-	</div>
+			<tr>
 
-	<div style="margin-left:50%">
+				<td><label for="nombre" style="font-size: 20px" >Apodo</label></td>
 
-		<input type="submit" value="Enviar">
+				<td colspan="2"><input type="text" id="nombre" th:field="*{nombre}"  style="width : 200px"></td>
+
+			</tr>
+
+			<tr>
+
+				<td><label for="telefono" style="font-size: 20px" >Telefono</label></td>
+
+				<td colspan="2"><input type="text" id="telefono" th:field="*{telefono}"  style="width : 200px"></td>
+
+			</tr>
+
+			<tr>
+
+				<td><label for="contrasena" style="font-size: 20px" >Contraseña</label></td>
+
+				<td colspan="2"><input type="text" id="contrasena" th:field="*{contrasena}"  style="width : 200px"></td>
+			<tr>
+				<td></td>
+
+				<td><input type="submit" value="Enviar" style="width : 100px; margin-top: 5px; margin-left: 10px"> </td>
+				<td></td>
+
+			</tr>
+		</table>
 	</div>
 </form>
 </body>

@@ -43,6 +43,17 @@ public class UsuarioController {
 		usuarioService.save(u);
 		return "redirect:/";
 	}
+
+	@PostMapping("/register")
+	public String registerUsuario(){
+		return "redirect:/usuario/add";
+	}
+
+	@PostMapping("/confirmar")
+	public String comprobarUsuario(){
+		return "redirect:/usuario";
+	}
+
 	@RequestMapping("/usuario/edit/{id}")
 	public String editUsuario(@PathVariable("id") Integer id, Model model) {
 		model.addAttribute("usuario", usuarioService.getById(id));
@@ -53,6 +64,8 @@ public class UsuarioController {
 		usuarioService.delete(id);
 		return "redirect:/usuario";
 	}
+
+
 	
 	
 }
