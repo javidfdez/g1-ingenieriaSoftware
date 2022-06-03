@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Ver viaje</title>
 </head>
 <body>
+<h1>Ver viaje</h1>
+<div>
+    <label for="HoraSalida">Hora de Salida</label>
+    <span th:text="${viaje.HoraSalida}"></span>
+</div>
+<div>
+    <label for="HoraLLegada">Hora de Llegada</label>
+    <span th:text="${viaje.HoraLLegada}"></span>
+</div>
 
-
-
+<div>
+    <label for="origen">Origen</label>
+    <span th:text="${viaje.origen}"></span>
+</div>
+<div>
+    <label for="destino">Destino</label>
+    <span th:text="${viaje.origen}"></span>
+</div>
+<div>
+    <span>Viajes</span>
+</div>
 </body>
 </html>

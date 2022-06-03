@@ -27,6 +27,9 @@ public class Viaje {
 	private String origen;
 	private String destino;
 
+//	@ManyToOne
+//	private Usuario conductor;
+
 	public Viaje(){
 
 	}
@@ -102,6 +105,14 @@ public class Viaje {
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
+
+//	public Usuario getConductor() {
+//		return conductor;
+//	}
+//
+//	public void setConductor(Usuario conductor) {
+//		this.conductor = conductor;
+//	}
 
 	@Override
 	public boolean equals(Object o) {
