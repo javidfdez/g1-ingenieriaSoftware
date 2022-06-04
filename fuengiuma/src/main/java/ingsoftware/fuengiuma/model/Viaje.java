@@ -2,6 +2,8 @@ package ingsoftware.fuengiuma.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.*;
@@ -16,10 +18,10 @@ public class Viaje {
 
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
-	private Date horaSalida;
+	private Calendar horaSalida;
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
-	private Date horaLlegada;
+	private Calendar horaLlegada;
 	private double precio;
 	private String coche;
 	private short plazas;
@@ -42,19 +44,19 @@ public class Viaje {
 		this.id = id;
 	}
 
-	public Date getHoraSalida() {
+	public Calendar getHoraSalida() {
 		return horaSalida;
 	}
 
-	public void setHoraSalida(Date horaSalida) {
+	public void setHoraSalida(Calendar horaSalida) {
 		this.horaSalida = horaSalida;
 	}
 
-	public Date getHoraLlegada() {
+	public Calendar getHoraLlegada() {
 		return horaLlegada;
 	}
 
-	public void setHoraLlegada(Date horaLlegada) {
+	public void setHoraLlegada(Calendar horaLlegada) {
 		this.horaLlegada = horaLlegada;
 	}
 

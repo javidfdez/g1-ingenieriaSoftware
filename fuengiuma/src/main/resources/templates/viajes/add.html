@@ -12,37 +12,38 @@
 <form th:action="@{/viajes/save}" method="post" th:object="${viaje}">
 
     <input type="hidden" id="id" th:field="*{id}">
+<table align="center">
+    <tr style="margin-left:42%">
+        <th><label for="HoraSalida" >Hora de salida</label></th>
+        <td><input type="datetime-local" id="HoraSalida" th:field="*{HoraSalida}"></td>
+    </tr>
 
-    <div style="margin-left:42%">
-        <label for="HoraSalida" >Hora de salida</label>
-        <input type="datetime-local" id="HoraSalida" th:field="*{HoraSalida}" style="width : 200px; margin-left: 44px">
-    </div>
+    <tr style="margin-left:42%">
+        <th><label for="HoraLlegada">Hora de llegada</label></th>
+        <td><input type="datetime-local" id="HoraLlegada" th:field="*{HoraLlegada}"></td>
+    </tr>
 
-    <div style="margin-left:42%">
-        <label for="HoraLlegada">Hora de llegada</label>
-        <input type="datetime-local" id="HoraLlegada" th:field="*{HoraLlegada}" style="width : 200px;  margin-left: 35px">
-    </div>
-
-    <div style="margin-left:42%">
-        <label for="precio">Precio</label>
-        <input type="text" id="precio" th:field="*{precio}" style="width : 200px;  margin-left: 95px">
-    </div>
-    <div style="margin-left:42%">
-        <label for="plazas">Número de plazas</label>
-        <input type="text" id="plazas" th:field="*{plazas}" style="width : 200px;  margin-left: 20px">
-    </div>
-    <div style="margin-left:42%">
-        <label for="origen">Origen</label>
-        <input type="text" id="origen" th:field="*{origen}" style="width : 200px;  margin-left: 95px">
-    </div>
-    <div style="margin-left:42%">
-        <label for="destino">Destino</label>
-        <input type="text" id="destino" th:field="*{destino}" style="width : 200px;  margin-left: 93px">
-    </div>
-    <div style="margin-left:42%">
-        <label for="coche">Modelo de Coche</label>
-        <input type="text" id="coche" th:field="*{coche}" style="width : 200px;  margin-left: 20px">
-    </div>
+    <tr style="margin-left:42%">
+        <th><label for="precio">Precio</label></th>
+        <td><input type="text" id="precio" th:field="*{precio}"></td>
+    </tr>
+    <tr style="margin-left:42%">
+        <th><label for="plazas">Número de plazas</label></th>
+        <td><input type="text" id="plazas" th:field="*{plazas}" ></td>
+    </tr>
+    <tr style="margin-left:42%">
+        <th><label for="origen">Origen</label></th>
+        <td><input type="text" id="origen" th:field="*{origen}" ></td>
+    </tr>
+    <tr style="margin-left:42%">
+        <th><label for="destino">Destino</label></th>
+        <td><input type="text" id="destino" th:field="*{destino}"></td>
+    </tr>
+    <tr style="margin-left:42%">
+        <th><label for="coche">Modelo de Coche</label></th>
+        <td><input type="text" id="coche" th:field="*{coche}"></td>
+    </tr>
+</table>
 
     <div style="margin-left:50%">
 

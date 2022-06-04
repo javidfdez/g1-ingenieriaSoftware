@@ -29,4 +29,11 @@ public class ViajeService {
 	public Viaje getById(Integer id) {
 		return viajeRepository.getOne(id);
 	}
+
+//	public Viaje inscribirse(Integer id){
+//		if(viajeRepository.getById(id).getPlazas() != 0){
+//			viajeRepository.getById(id).setPlazas((short) (viajeRepository.getById(id).getPlazas() - 1));
+//		}
+//		return viajeRepository.getById(id);
+//	}
 }

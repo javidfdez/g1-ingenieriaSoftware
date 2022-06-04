@@ -47,5 +47,8 @@
 					<td><a th:href="@{/viajes/view/{id}(id=${v.id})}">Ver</a></td>
 				</tr>
         </table>
+		<form th:action="@{/viajes/volver}" method="post" align="center">
+			<td><input type="submit" value="Volver" style="width: 0 auto"> </td>
+		</form>
     </body>
 </html>

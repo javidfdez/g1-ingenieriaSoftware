@@ -52,6 +52,13 @@ public class ViajeController {
 		return "viajes/view";
 	}
 
+//	@RequestMapping("/viajes/inscribirse/{id}")
+//	public String inscribirViaje(@PathVariable("id") Integer id, Viaje v, Model model) {
+//		model.addAttribute("viaje",viajeService.inscribirse(id));
+//		return "viajes/view";
+//	}
+
+
 	@RequestMapping("/viajes/delete/{id}")
 	public String deleteViajes(@PathVariable("id") Integer id) {
 		viajeService.delete(id);
@@ -62,6 +69,11 @@ public class ViajeController {
 		List<Viaje> viajes = viajeService.getAll();
 		model.addAttribute("listaViajes", viajes);
 		return "viajes/sesionInicial";
+	}
+
+	@PostMapping("/viajes/volver")
+	public String volverUsuario(){
+		return "redirect:/viajes/sesionInicial";
 	}
 	
 }
