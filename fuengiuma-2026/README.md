@@ -6,7 +6,7 @@
 
 Aplicación de movilidad compartida para estudiantes: encuentra un trayecto, solicita plaza y coordina el punto de encuentro con sus participantes. El conductor publica sus viajes y confirma a los pasajeros.
 
-Este repositorio reconstruye y amplía **FuengiUMA**, un proyecto colectivo de la asignatura de Ingeniería del Software de la UMA de 2022. La edición de portfolio de octubre de 2026 está desarrollada con asistencia de IA. Conserva la idea y los créditos originales; las mejoras actuales se documentan por separado en [Origen y evolución](documentation/ORIGEN.md). No es un servicio oficial de la universidad.
+Este repositorio reconstruye y amplía **FuengiUMA**, un proyecto colectivo de la asignatura de Ingeniería del Software de la UMA de 2022. Esta edición de portfolio corresponde a octubre de 2026. Conserva la idea y los créditos originales; las mejoras actuales se documentan por separado en [Origen y evolución](documentation/ORIGEN.md). No es un servicio oficial de la universidad.
 
 ![Pantalla de búsqueda de FuengiUMA](assets/screenshots/inicio.png)
 

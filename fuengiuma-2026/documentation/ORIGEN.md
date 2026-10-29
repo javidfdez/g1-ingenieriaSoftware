@@ -31,6 +31,6 @@ La edición actual reimplementa la aplicación; no es una exportación intacta d
 
 ## Autoría y presentación profesional
 
-El README histórico enumera siete personas, reproducidas en el README actual. Que una función aparezca en esta reconstrucción no demuestra quién la desarrolló en la asignatura. La edición de octubre de 2026 se ha elaborado con asistencia de IA a partir de los materiales aportados por Mario.
+El README histórico enumera siete personas, reproducidas en el README actual. Que una función aparezca en esta reconstrucción no demuestra quién la desarrolló en la asignatura. La edición de octubre de 2026 se ha elaborado a partir de los materiales aportados por Mario.
 
 Para el CV pueden documentarse el proyecto colectivo, su objetivo, la tecnología original y los artefactos del análisis. La contribución individual de Mario debe concretarse con su explicación y evidencias. Las funciones añadidas pertenecen a esta reconstrucción y deben fecharse como tal.
