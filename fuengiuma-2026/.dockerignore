@@ -1,0 +1,7 @@
+.git
+target
+data
+docs
+assets
+*.zip
+*.log

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FuengiUMA: comparte el camino entre la costa y la Universidad de Málaga. Proyecto académico de movilidad compartida.">
+  <meta name="fuengiuma-mode" content="server">
+  <meta name="theme-color" content="#143e37">
+  <title>FuengiUMA · El camino a clase</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="seed.js"></script><script defer src="demo.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Ir al contenido</a>
+  <header class="header"><div class="header-inner">
+    <a class="brand" href="#buscar" aria-label="FuengiUMA, inicio"><span class="brand-mark" aria-hidden="true">f<span>↗</span></span><span>Fuengi<span class="brand-uma">UMA</span></span></a>
+    <nav aria-label="Principal"><a href="#buscar" data-nav="buscar">Buscar viaje</a><a href="#viajes" data-nav="viajes">Mis viajes</a><a href="#mensajes" data-nav="mensajes">Mensajes</a></nav>
+    <div class="header-actions"><button class="button secondary small" data-action="publish"><span aria-hidden="true">＋</span> Publicar viaje</button><button class="account" data-action="account" id="account">Entrar <span aria-hidden="true">↗</span></button></div>
+  </div></header>
+  <main id="main" tabindex="-1"><div class="loading">Preparando el próximo trayecto…</div></main>
+  <footer><a class="footer-brand" href="#buscar">FuengiUMA <span>↗</span></a><p>De la costa al campus, en compañía.</p><span>Proyecto académico · Datos de ejemplo</span><a href="https://github.com/javidfdez/g1-ingenieriaSoftware" target="_blank" rel="noopener">El proyecto original ↗</a></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript>Activa JavaScript para utilizar la aplicación.</noscript>
+</body></html>

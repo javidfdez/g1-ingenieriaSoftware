@@ -1,0 +1,13 @@
+/target/
+/.cache/
+/.idea/
+/.vscode/
+/data/
+*.mv.db
+*.trace.db
+*.log
+*.zip
+*.jar
+.env
+.DS_Store
+Thumbs.db
